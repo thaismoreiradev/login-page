@@ -8,7 +8,7 @@ export const App = () => {
 
 
   const [passwordVisible, setPasswordVisible] = useState(false)
-
+  const [modalVisible, setModalVisible] = useState(false)
 
   const [emailValue, setEmailValue] = useState("")
   const [passwordValue, setPasswordValue] = useState("")
@@ -19,11 +19,16 @@ export const App = () => {
 
 
 
+
   return (
     <main className='flex flex-col justify-center items-center' >
 
+
+
+
+
       {/* principal container */}
-      <div className='bg-neutral-800 text-white flex flex-col items-center justify-center rounded-xl gap-3 m-6 min-h-[80vh] min-w-[80vw] max-w-[500px]'>
+      <div className='relative bg-neutral-800 text-white flex flex-col items-center justify-center rounded-xl gap-3 m-6 min-h-[80vh] min-w-[80vw] max-w-[500px]'>
         <h1 className='text-sm'>welcome back!</h1>
 
         <form className=' flex flex-col gap-2 w-10/12 text-sm  '>
@@ -39,7 +44,8 @@ export const App = () => {
              hover:border-pink-500'
               value={emailValue}
               onChange={(e) => setEmailValue(e.target.value)}
-
+              required
+              
             />
 
 
@@ -59,6 +65,7 @@ export const App = () => {
              bg-transparent text-white outline-none h-9 w-full'
               value={passwordValue}
               onChange={(e) => setPasswordValue(e.target.value)}
+              required
             />
 
             <div className='text-lg' onClick={() => setPasswordVisible(!passwordVisible)}>
@@ -66,20 +73,59 @@ export const App = () => {
             </div>
 
 
-          </div>
+    
 
+
+
+
+
+          </div>
 
           <button className='
           p-3 rounded-xl text-neutral-800 font-medium h-9 flex items-center justify-center
            bg-gradient-to-r from-purple-500 via-orange-200 to-pink-400 text-sm'
 
-            onClick={() => alert(`${emailValue}
-    ${passwordValue}`)}
+            onClick={(e) => {
+              e.preventDefault()
+              setModalVisible(true)
+              
+            }}
 
+          type="submit"
           >login</button>
 
 
+
+
+          
+
+
+          
+
+
+         
+
+
+
         </form>
+
+
+        {/* modal with message */}
+
+          <div className=
+          {modalVisible === false ? "hidden" : "flex absolute w-4/5 h-2/3 p-3 bg-slate-400 flex-col items-center justify-center rounded-xl text-sm gap-3"}>
+            <p>{`
+            Hi, this is a simulation
+          ${emailValue}
+          ${passwordValue}`}
+            </p>
+            <button className='bg-neutral-800 rounded-xl w-2/4 h-7'
+            onClick={() => setModalVisible(false)}>close</button>
+          </div>
+        
+
+
+
 
 
 
