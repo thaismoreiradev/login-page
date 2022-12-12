@@ -21,6 +21,12 @@ export const App = () => {
   const [emailValue, setEmailValue] = useState("")
   const [passwordValue, setPasswordValue] = useState("")
 
+  const [messageModal, setMessageModal] = useState("")
+
+
+  const [showLoginValues, setShowLoginValues] = useState(null)
+
+
 
 
   return (
@@ -34,12 +40,14 @@ export const App = () => {
         <div className='relative bg-neutral-800 text-white flex flex-col items-center justify-center rounded-xl gap-3 m-6 min-h-[80vh] min-w-[80vw] max-w-[500px]'>
 
 
-          {/* modal with message */}
+          {/* modal with messages */}
           <Modal
             modalVisible={modalVisible}
             setModalVisible={setModalVisible}
-            emailValue={emailValue}
-            passwordValue={passwordValue}
+            text1={messageModal}
+            text2={emailValue}
+            text3={passwordValue}
+            showLoginValues={showLoginValues}
           />
 
 
@@ -54,6 +62,8 @@ export const App = () => {
                 setPasswordVisible={setPasswordVisible}
                 passwordValue={passwordValue}
                 setPasswordValue={setPasswordValue}
+                setMessageModal={setMessageModal}
+                setShowLoginValues={setShowLoginValues}
               />}
             />
 
@@ -67,6 +77,8 @@ export const App = () => {
                 setPasswordVisible={setPasswordVisible}
                 passwordValue={passwordValue}
                 setPasswordValue={setPasswordValue}
+                setMessageModal={setMessageModal}
+                setShowLoginValues={setShowLoginValues}
               />}
             />
 

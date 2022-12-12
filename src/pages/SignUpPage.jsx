@@ -3,15 +3,17 @@ import { InputEmail } from '../components/InputEmail';
 import { InputPassword } from '../components/InputPassword';
 
 export const SignUpPage = ({
-    setModalVisible, emailValue, setEmailValue, passwordVisible, setPasswordVisible, passwordValue, setPasswordValue 
+    setModalVisible, emailValue, setEmailValue, passwordVisible, setPasswordVisible, passwordValue, setPasswordValue, setMessageModal, setShowLoginValues
 }) => (
 
-    <section>
+    <section className="flex flex-col items-center">
 
         {/* form with inputs and button */}
-        <form className=' flex flex-col gap-2 w-10/12 text-sm'
+        <form className=' flex flex-col gap-2 text-sm w-full'
             onSubmit={(e) => {
                 e.preventDefault()
+                setMessageModal("createeeeeeed")
+                setShowLoginValues(true)
                 setModalVisible(true)
             }}>
 
@@ -38,9 +40,12 @@ export const SignUpPage = ({
                 setPasswordValue={setPasswordValue}
             />
 
+
+            <Button title={"create"} />
+
         </form>
 
-        <Button title={"create"} />
+
 
         <div className='text-xs self-center flex gap-1 mt-2 text-neutral-500 outline-none'>
             <input type="checkbox" id='remember' className='outline-none' />

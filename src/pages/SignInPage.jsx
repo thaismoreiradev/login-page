@@ -5,17 +5,19 @@ import { InputPassword } from '../components/InputPassword';
 
 
 export const SignInPage = ({
-    setModalVisible, emailValue, setEmailValue, passwordVisible, setPasswordVisible, passwordValue, setPasswordValue
+    setModalVisible, emailValue, setEmailValue, passwordVisible, setPasswordVisible, passwordValue, setPasswordValue, setMessageModal, setShowLoginValues
 }) => (
 
-    <section>
+    <section className="flex flex-col items-center">
 
-        <h1 className='text-sm'>welcome back!</h1>
+        <h1 className='text-sm mb-2'>welcome back!</h1>
 
         {/* form with inputs and button */}
-        <form className=' flex flex-col gap-2 w-10/12 text-sm'
+        <form className=' flex flex-col gap-2 w-full text-sm m-0'
             onSubmit={(e) => {
                 e.preventDefault()
+                setMessageModal("Hi, this is only a simulation. But here is your sign in infos:")
+                setShowLoginValues(true)
                 setModalVisible(true)
             }}>
 
@@ -35,17 +37,25 @@ export const SignInPage = ({
                 setPasswordValue={setPasswordValue}
             />
 
+
+            <Button title={"login"} />            
+            <div className='text-xs self-center flex gap-1 mt-2 mb-0 text-neutral-500 outline-none'>
+                <input type="checkbox" id='remember' className='outline-none' />
+                <label htmlFor='remember'>Remember me</label>
+            </div>
+
         </form>
 
-        <Button title={"login"} />
 
-        <div className='text-xs self-center flex gap-1 mt-2 text-neutral-500 outline-none'>
-            <input type="checkbox" id='remember' className='outline-none' />
-            <label htmlFor='remember'>Remember me</label>
-        </div>
+
+
 
         {/* little texts below form*/}
-        <Texts/>
+        <Texts
+            setMessageModal={setMessageModal}
+            setShowLoginValues={setShowLoginValues}
+            setModalVisible={setModalVisible}
+        />
 
     </section>
 )
