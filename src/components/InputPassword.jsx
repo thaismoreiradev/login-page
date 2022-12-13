@@ -1,6 +1,6 @@
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
-export const InputPassword = ({passwordVisible, setPasswordVisible, passwordValue, setPasswordValue}) => (
+export const InputPassword = ({ passwordVisible, setPasswordVisible, password, setPassword }) => (
 
     <div className='flex justify-between items-center p-3 bg-transparent text-white outline-none border-2 rounded-xl w-full h-9
              border-purple-500
@@ -10,8 +10,8 @@ export const InputPassword = ({passwordVisible, setPasswordVisible, passwordValu
             type={passwordVisible === true ? "text" : "password"}
             placeholder='Password'
             className='bg-transparent text-white outline-none h-9 w-full'
-            value={passwordValue}
-            onChange={(e) => setPasswordValue(e.target.value)}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
         />
 

@@ -13,7 +13,7 @@ export const Texts = ({ setModalVisible, setMessageModal, setShowLoginValues }) 
         </p>
 
         <p onClick={() => {
-            setMessageModal("password forgotten")
+            setMessageModal("If this was a real login form we  will probably send a link to your e-mail for create a new password ;)")
             setShowLoginValues(false)
             setModalVisible(true)
         }} >

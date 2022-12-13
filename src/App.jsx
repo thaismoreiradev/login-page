@@ -14,17 +14,15 @@ import { Footer } from './components/Footer';
 export const App = () => {
 
 
-
-  const [passwordVisible, setPasswordVisible] = useState(false)
-  const [modalVisible, setModalVisible] = useState(false)
-
   const [emailValue, setEmailValue] = useState("")
   const [passwordValue, setPasswordValue] = useState("")
 
+  const [passwordVisible, setPasswordVisible] = useState(false)
+
+  const [modalVisible, setModalVisible] = useState(false)
   const [messageModal, setMessageModal] = useState("")
-
-
   const [showLoginValues, setShowLoginValues] = useState(null)
+
 
 
 
@@ -60,8 +58,8 @@ export const App = () => {
                 setEmailValue={setEmailValue}
                 passwordVisible={passwordVisible}
                 setPasswordVisible={setPasswordVisible}
-                passwordValue={passwordValue}
-                setPasswordValue={setPasswordValue}
+                password={passwordValue}
+                setPassword={setPasswordValue}
                 setMessageModal={setMessageModal}
                 setShowLoginValues={setShowLoginValues}
               />}
@@ -75,10 +73,12 @@ export const App = () => {
                 setEmailValue={setEmailValue}
                 passwordVisible={passwordVisible}
                 setPasswordVisible={setPasswordVisible}
-                passwordValue={passwordValue}
-                setPasswordValue={setPasswordValue}
+                password={passwordValue}
+                setPassword={setPasswordValue}
                 setMessageModal={setMessageModal}
                 setShowLoginValues={setShowLoginValues}
+
+
               />}
             />
 

@@ -4,8 +4,13 @@ import { InputEmail } from '../components/InputEmail';
 import { InputPassword } from '../components/InputPassword';
 
 
+
 export const SignInPage = ({
-    setModalVisible, emailValue, setEmailValue, passwordVisible, setPasswordVisible, passwordValue, setPasswordValue, setMessageModal, setShowLoginValues
+    setModalVisible, setMessageModal, setShowLoginValues,
+    emailValue, setEmailValue,
+    passwordVisible, setPasswordVisible,
+    password, setPassword   
+    
 }) => (
 
     <section className="flex flex-col items-center">
@@ -16,7 +21,7 @@ export const SignInPage = ({
         <form className=' flex flex-col gap-2 w-full text-sm m-0'
             onSubmit={(e) => {
                 e.preventDefault()
-                setMessageModal("Hi, this is only a simulation. But here is your sign in infos:")
+                setMessageModal("This is only a simulation. But here is your user informations:")
                 setShowLoginValues(true)
                 setModalVisible(true)
             }}>
@@ -33,8 +38,8 @@ export const SignInPage = ({
             <InputPassword
                 passwordVisible={passwordVisible}
                 setPasswordVisible={setPasswordVisible}
-                passwordValue={passwordValue}
-                setPasswordValue={setPasswordValue}
+                password={password}
+                setPassword={setPassword}
             />
 
 
