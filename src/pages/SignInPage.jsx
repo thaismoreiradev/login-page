@@ -9,8 +9,8 @@ export const SignInPage = ({
     setModalVisible, setMessageModal, setShowLoginValues,
     emailValue, setEmailValue,
     passwordVisible, setPasswordVisible,
-    password, setPassword   
-    
+    password, setPassword,
+    creatingAccount
 }) => (
 
     <section className="flex flex-col items-center">
@@ -18,7 +18,7 @@ export const SignInPage = ({
         <h1 className='text-sm mb-2'>welcome back!</h1>
 
         {/* form with inputs and button */}
-        <form className=' flex flex-col gap-2 w-full text-sm m-0'
+        <form className=' flex flex-col gap-2 w-full max-w-[210px] text-sm m-0'
             onSubmit={(e) => {
                 e.preventDefault()
                 setMessageModal("This is only a simulation. But here is your user informations:")
@@ -40,10 +40,11 @@ export const SignInPage = ({
                 setPasswordVisible={setPasswordVisible}
                 password={password}
                 setPassword={setPassword}
+                creatingAccount={creatingAccount}
             />
 
 
-            <Button title={"login"} />            
+            <Button title={"login"} />
             <div className='text-xs self-center flex gap-1 mt-2 mb-0 text-neutral-500 outline-none'>
                 <input type="checkbox" id='remember' className='outline-none' />
                 <label htmlFor='remember'>Remember me</label>
@@ -60,6 +61,9 @@ export const SignInPage = ({
             setMessageModal={setMessageModal}
             setShowLoginValues={setShowLoginValues}
             setModalVisible={setModalVisible}
+            setEmailValue={setEmailValue}
+            setPassword={setPassword}
+            
         />
 
     </section>

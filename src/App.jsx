@@ -9,10 +9,7 @@ import { Modal } from './components/Modal';
 import { Footer } from './components/Footer';
 
 
-
-
 export const App = () => {
-
 
   const [emailValue, setEmailValue] = useState("")
   const [passwordValue, setPasswordValue] = useState("")
@@ -24,19 +21,13 @@ export const App = () => {
   const [showLoginValues, setShowLoginValues] = useState(null)
 
 
-
-
-
   return (
-
 
     <BrowserRouter>
       <main className='flex flex-col justify-center items-center' >
 
-
         {/* principal container */}
         <div className='relative bg-neutral-800 text-white flex flex-col items-center justify-center rounded-xl gap-3 m-6 min-h-[80vh] min-w-[80vw] max-w-[500px]'>
-
 
           {/* modal with messages */}
           <Modal
@@ -46,6 +37,8 @@ export const App = () => {
             text2={emailValue}
             text3={passwordValue}
             showLoginValues={showLoginValues}
+            passwordVisible={passwordVisible}
+            setPasswordVisible={setPasswordVisible}
           />
 
 
@@ -62,6 +55,7 @@ export const App = () => {
                 setPassword={setPasswordValue}
                 setMessageModal={setMessageModal}
                 setShowLoginValues={setShowLoginValues}
+                creatingAccount={false}
               />}
             />
 
@@ -77,7 +71,8 @@ export const App = () => {
                 setPassword={setPasswordValue}
                 setMessageModal={setMessageModal}
                 setShowLoginValues={setShowLoginValues}
-
+                creatingAccount={true}
+                
 
               />}
             />
