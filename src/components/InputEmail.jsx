@@ -9,5 +9,4 @@ export const InputEmail = ({ emailValue, setEmailValue }) => (
         onChange={(e) => setEmailValue(e.target.value)}
         required
     />
-
 )

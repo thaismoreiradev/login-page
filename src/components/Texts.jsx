@@ -2,7 +2,8 @@
 import { Link } from 'react-router-dom'
 
 
-export const Texts = ({ setModalVisible, setMessageModal, setShowLoginValues, setEmailValue, setPassword }) => (
+export const Texts = ({ setModalVisible, setMessageModal, setShowLoginValues, setEmailValue, setPassword, setPasswordVisible }) => (
+
     <div className='items-center flex flex-col flex-center text-neutral-500 outline-none'>
 
         <p>
@@ -12,15 +13,15 @@ export const Texts = ({ setModalVisible, setMessageModal, setShowLoginValues, se
                 onClick={() => {
                     setEmailValue("")
                     setPassword("")
+                    setPasswordVisible(false)
                 }}
-
             >
                 New here? Create an account
             </Link>
         </p>
 
         <p onClick={() => {
-            setMessageModal("If this was a real login form we would probably send a link to your e-mail to help you :)")
+            setMessageModal("If this was a real login form we would probably send an e-mail to help you :)")
             setShowLoginValues(false)
             setModalVisible(true)
         }} >
@@ -29,8 +30,6 @@ export const Texts = ({ setModalVisible, setMessageModal, setShowLoginValues, se
                 Forgot password?
             </a>
         </p>
-
-
 
     </div >
 )

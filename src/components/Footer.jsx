@@ -2,6 +2,7 @@
 export const Footer = () => (
 
     <footer className="text-neutral-800 text-xs">
+
         <p>Developed by
             <a
                 href="https://github.com/thaismoreiradev"
@@ -11,5 +12,6 @@ export const Footer = () => (
             > Thais Moreira
             </a>
         </p>
+        
     </footer>
 )
